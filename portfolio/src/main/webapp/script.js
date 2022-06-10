@@ -27,9 +27,12 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+
 async function showServerTime() {
     const responseFromServer = await fetch('/hello');
-    const textFromResponse = await responseFromServer.text();
+    const myObject = await responseFromServer.json();
     const dateContainer = document.getElementById('m-container');
-    dateContainer.innerText = textFromResponse;
+    const single_message = myObject[Math.floor(Math.random() * myObject.length)];
+    dateContainer.innerText = single_message;
 }
+
