@@ -45,17 +45,25 @@
         <a href="https://github.com/RituA08">GitHub</a>
       </p>
 
+
       <form method="POST" action="/form-handler" method="POST">
         <p>Send me a message!</p>
         <textarea name="text-input"></textarea>
         <br/>
-        <input type="Submit" />
-    </form>
+        <input type="Submit" /></form>
+
+    <p>Click this button to see the server's message</p>
+      <button onclick="showServerTime();">
+        Get Message
+      </button>
+    <p id="m-container"></p>
 
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Click Me!</button>
       <div id="greeting-container"></div>
+    
     </div>
   </body>
 </html>
