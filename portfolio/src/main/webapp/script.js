@@ -27,12 +27,21 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-
 async function showServerTime() {
     const responseFromServer = await fetch('/hello');
-    const myObject = await responseFromServer.json();
-    const dateContainer = document.getElementById('m-container');
-    const single_message = myObject[Math.floor(Math.random() * myObject.length)];
-    dateContainer.innerText = single_message;
+    const response = await responseFromServer.json();
+    const messagecontainer = document.getElementById('m-container');
+    if (response["comments"].length == 0) {
+        messagecontainer.innerHTML = "No comments";
+    } else {
+        messagecontainer.innerHTML = response["comments"][Math.floor(Math.random() * response["comments"].length)];
+    }
 }
+
+
+
+
+
+
+
 
