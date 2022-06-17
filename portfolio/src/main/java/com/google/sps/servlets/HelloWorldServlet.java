@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import java.util.Map;
 import java.util.List;
-import com.google.gson.Gson;
-
-
 
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/hello")
