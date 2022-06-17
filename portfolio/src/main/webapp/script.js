@@ -38,6 +38,28 @@ async function showServerTime() {
     }
 }
 
+async function showTranslation(){
+
+    const text = document.getElementById('text').value;
+    const languageCode = document.getElementById('language').value;
+
+    const resultContainer = document.getElementById('result');
+    resultContainer.innerText = 'Loading...';
+
+    //appends text and language code key/value pair to the URLSearchParams object
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text()) //read the response
+    .then((translatedMessage) => { 
+      resultContainer.innerText = translatedMessage;
+    });
+  }
+
 
 
 
