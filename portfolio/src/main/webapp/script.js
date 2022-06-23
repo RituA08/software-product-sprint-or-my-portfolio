@@ -26,3 +26,18 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+async function showServerTime() {
+    const responseFromServer = await fetch('/hello');
+    const response = await responseFromServer.json();
+    const messagecontainer = document.getElementById('m-container');
+    if (response["comments"].length == 0) {
+        messagecontainer.innerHTML = "No comments";
+    } else {
+        messagecontainer.innerHTML = response["comments"][Math.floor(Math.random() * response["comments"].length)];
+    }
+}
+
+
+
+

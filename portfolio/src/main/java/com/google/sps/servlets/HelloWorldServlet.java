@@ -6,13 +6,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import java.util.Map;
+import java.util.List;
+
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/hello")
 public class HelloWorldServlet extends HttpServlet {
 
+    private static final Map < String, List < String >> commentMap = Map.of(
+        "comments", List.of(
+        "I am 20 years old",
+        "Orange is my favourite colour",
+        "I do not know how to swim",
+        "I recently learned how to drive"
+    )
+    );
+
+    private static final String json_string = new Gson().toJson(commentMap);
+
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello world!</h1>");
-  }
+    
+    // Send the JSON as the response
+    response.setContentType("application/json;");
+    response.getWriter().println(json_string);
+
+}
+
+    
 }
