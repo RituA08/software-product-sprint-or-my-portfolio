@@ -8,12 +8,61 @@
   </head>
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
+      <h1>Ritu Ataliya's Portfolio</h1>
+      <img src="/images/LinkedINPP.jpg" width = "190" height = "300"/>
+      <p>Hi! My name is Ritu and I am a third year computer science student
+          at Wilfrid Laurier University.
+      </p>
+      <p><u><strong>Hobbies</strong></u> <br>
+      > Reading <br>
+      > Writing Poetry<br>
+      > Hiking <br>
+      > Cooking <br>
+      > Playing Chess <br>
+      </p>
+
+      <p><u><strong>My Projects</strong></u><br>
+        > Articulaite : A machine learning classifier capable of 
+        diagnosing a user's underlying cause of dysarthria (a motor speech disorder)
+        as being indicative of ALS, Cerebral Palsy or Parkinsons using only a 5 second voice recording <br>
+        > Google Chrome Extension - shows a new quote to the user on every click<br>
+        > Student Record-Keeping Database (SQL, MySQL) <br>
+        > Tic Tac Toe Game <br>
+        > Restaurant Menu Interface, also sends PDF receipt to the user <br>
+        > Wedding Management Application <br>
+      </p>
+
+      <p><u><strong>Picture Gallery + Favourite Poems</strong></u> <br>
+        <img src="/images/flowers.jpg" width = "200" height = "300"/>
+        <img src="/images/rumi.jpg" width = "200" height = "300"/>
+        <img src="/images/fall.jpg" width = "200" height = "300"/>
+        <img src="/images/nothing.jpg" width = "300" height = "300"/>
+        <img src="/images/pic.JPG" width = "300" height = "300"/>
+      </p>
+        
+      <p><em><strong>Profiles</strong></em><br>
+        <a href="https://www.linkedin.com/in/ritu-ataliya/">LinkedIn</a><br>
+        <a href="https://github.com/RituA08">GitHub</a>
+      </p>
+
+      <form method="POST" action="/form-handler" method="POST">
+        <p>Send me a message!</p>
+        <textarea name="text-input"></textarea>
+        <br/>
+        <input type="Submit" /></form>
+
+      <p>Click this button to see the server's message</p>
+        <button onclick="showServerTime();">
+            Get Message
+        </button>
+      <p id="m-container"></p>
+
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+
       <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
+      <button onclick="addRandomGreeting()">Click Me!</button>
       <div id="greeting-container"></div>
+
 
       <h1>Translation</h1>
       <p>Type a message and select a language, then click submit to translate it.</p>
@@ -34,6 +83,7 @@
   
       <button onclick="showTranslation();">Translate</button>
       <p id="result"></p>
+
 
     </div>
   </body>

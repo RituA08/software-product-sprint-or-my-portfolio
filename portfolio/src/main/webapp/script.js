@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['I love to read', 'My dream city is NYC', 'I love animals', 'I am majoring in CS'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -37,6 +37,7 @@ async function showServerTime() {
         messagecontainer.innerHTML = response["comments"][Math.floor(Math.random() * response["comments"].length)];
     }
 }
+
 
 async function showTranslation(){
 
@@ -59,6 +60,7 @@ async function showTranslation(){
       resultContainer.innerText = translatedMessage;
     });
   }
+
 
 
 
